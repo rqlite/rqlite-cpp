@@ -7,32 +7,31 @@ enum ReadConsistencyLevel {
     kNone = 0,
     kWeak,
     kStrong
-}
+};
 
 class Pong {
     public:
-        string version;
+        std::string version;
 
         Pong() {
-            this.version = "unknown";
+            this->version = "unknown";
         }
 
-        Pong(string version) {
-            this.version = version;
+        Pong(std::string version) {
+            this->version = version;
         }
 };
 
 class Rqlite {
     public:
-        // Ping checks communication with the rqlite node. */
-        virtual Pong Ping() = 0;
-}
+        // Open opens a connection to the node.
+        virtual void Open() = 0;
 
-class RqliteFactory {
-    public:
-        static Rqlite Connect(string proto, string host, int port) {
-            return new RqliteImpl(proto,host, port);
-        }
+        // Close closes the connection to the node.
+        virtual void Close() = 0;
+
+        // Ping checks communication with the rqlite node. */
+        virtual Pong* Ping() = 0;
 };
 
 #endif  // RQLITE_H
