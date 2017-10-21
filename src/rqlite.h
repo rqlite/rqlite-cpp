@@ -64,7 +64,7 @@ public:
     virtual ExecuteResults Execute(string q) = 0;
 
     // Ping checks communication with the rqlite node. */
-    virtual Pong Ping();
+    virtual Pong Ping() = 0;
 }
 
 #endif  // RQLITE_H
