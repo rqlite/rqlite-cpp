@@ -1,5 +1,5 @@
 
-#include "rqliteImpl.hpp"
+#include "rqlite_impl.hpp"
 
 const std::string DefaultProto = "http";
 const std::string DefaultHost = "localhost";
