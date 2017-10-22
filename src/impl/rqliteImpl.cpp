@@ -1,3 +1,4 @@
+
 #include "rqliteImpl.hpp"
 
 const std::string DefaultProto = "http";
